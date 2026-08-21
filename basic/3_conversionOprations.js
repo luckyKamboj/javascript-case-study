@@ -78,3 +78,8 @@ console.log( "2" + 1 + 2); // 212
 console.log( 1 + 2 + "2" + 1 + 2); // 3212
 console.log( 1 + 2 + "2" + (1 + 2)); // 3213
 console.log( 1 + 2 + "2" + (1 + 2) + 1 + 2); // 321312
+
+
+let newValue = 322;
+console.log(newValue++); //322
+console.log(++newValue); //324
