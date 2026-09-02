@@ -11,23 +11,26 @@ let originalArray = ['hello', 'user', 'this', 'is', 'original', 'array'];
 // 1. AT
 // at takes negative/positive values both, for negative values it reads from last index and last index starts from -1 
 // if value passed in at method is greater than length of the array, it returns undefined.
-console.log(`At method results:  ${originalArray.at(-1)}`);  // array
-console.log(`At method results:  ${originalArray.at(-6)}`); // hello
-console.log(`At method results:  ${originalArray.at(-7)}`);  // undefined
-console.log(`At method results:  ${originalArray[-1]}`);  // undefined  
+// console.log(`At method results:  ${originalArray.at(-1)}`);  // array
+// console.log(`At method results:  ${originalArray.at(-6)}`); // hello
+// console.log(`At method results:  ${originalArray.at(-7)}`);  // undefined
+// console.log(`At method results:  ${originalArray[-1]}`);  // undefined  
 
 // 2. concat
 // concatination doesn't update original array, it provides a new array with concatinated values
-let newArray = [54,34,23];
-let updatedArray = originalArray.concat(newArray)
-console.log(`concat with original Array : ${originalArray}`); //[ 'hello', 'user', 'this', 'is', 'original', 'array' ]
-console.log(`concat with updated array : ${updatedArray}`); //[ 'hello', 'user', 'this', 'is', 'original', 'array', 54, 34, 23 ]
+//let newArray = [54,34,23];
+// let updatedArray = originalArray.concat(newArray)
+// console.log(`concat with original Array : ${originalArray}`); //[ 'hello', 'user', 'this', 'is', 'original', 'array' ]
+// console.log(`concat with updated array : ${updatedArray}`); //[ 'hello', 'user', 'this', 'is', 'original', 'array', 54, 34, 23 ]
 
+// let updateWithSpreadOp = [...originalArray, ...newArray];
+// console.log(updateWithSpreadOp);
+// console.log(originalArray);
 // 3. copyWithin
 // copyWithin - mutates the original array, it doesn't create a new array.
-updatedArray = originalArray.copyWithin(2, 3);
-console.log(`Updated array by copyWithin : ${updatedArray}`);
-console.log(`Original array by copyWithin : ${originalArray}`);
+// updatedArray = originalArray.copyWithin(2, 3);
+// console.log(`Updated array by copyWithin : ${updatedArray}`);
+// console.log(`Original array by copyWithin : ${originalArray}`);
 
 // 4. entries
 // entries returns iterable of key, value pairs of each entries. // use-case: if want for..of loop with break/continue statement. 
@@ -56,8 +59,8 @@ console.log(`Original array by copyWithin : ${originalArray}`);
 // console.log(spliceArray);
 
 // 7. join // creates a string of all the elements of origianl Array. default separator is `,`
-console.log(originalArray);
-console.log(originalArray.join('!')); 
+// console.log(originalArray);
+// console.log(originalArray.join('!')); 
 
 // Shallow copy example ( [...] Spread operator, slice, from, concat, filter, map, flat)
 // out of these [...], slice(), and Array.from() are best to use.
@@ -115,3 +118,6 @@ copyArray[4] = 23;
 // console.log(originalArray); // [ 1, 7, 8, [ 32, 56, 68, 86, 23 ] ]
 // console.log(copyArray); // [ 1, 7, 8, [ 32, 56, 68, 86, 23, 32 ] ]
 
+// map method by default flatten the values upto 1 level, otherwise provide a value upto required level.
+originalArray = [2,3,5,6,7,[45,54,8,6,8],[234,35,6,6,[54,6,4]]];
+console.log(originalArray.flat(2));
