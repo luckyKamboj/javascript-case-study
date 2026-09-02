@@ -19,7 +19,7 @@ const symbol2 = Symbol("myIdentifier");
 console.log(symbol1 === symbol2); // false
 console.log(typeof symbol1);       // "symbol"
 
-// Non-primitive data types are objects, arrays, functions, and dates. They are mutable and can hold multiple values. 
+// Non-primitive data types are objects: arrays, functions, Map, Set, RegExp, dates etc. They are mutable and can hold multiple values. 
 // object -> key value pair
 
 const myObject = {
