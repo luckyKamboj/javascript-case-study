@@ -1,18 +1,24 @@
-document.addEventListener('click', function(e){
-    const bgColor = document.getElementById('bgColor').value;
-    const color = document.getElementById('fontColor').value;
-    if(e.target.id === 'fontColorButton'){
-        document.body.style.color = color;
-        document.getElementsByClassName("color-button").item(0).style.color = color;
-    }
-    if(e.target.id === 'bgColorButton'){
-        document.body.style.backgroundColor = bgColor;
-        document.getElementsByClassName("color-button").item(0).style.backgroundColor = bgColor;
-    }
-    if(e.target.id === 'resetColor'){
-        document.body.style.color = '#000000';
-        document.body.style.backgroundColor = '#ffffff';
-        document.getElementsByClassName("color-button").item(0).style.color = '#000000';
-        document.getElementsByClassName("color-button").item(0).style.backgroundColor = '#797979';
-    }
+const bgColorInput = document.getElementById('bgColor');
+const fontColorInput = document.getElementById('fontColor');
+
+const bgColor = document.getElementById('bgColorButton');
+const color = document.getElementById('fontColorButton');
+const resetButton = document.getElementById("resetColor");
+
+const buttons = document.getElementsByClassName("color-button");
+bgColor.addEventListener('click', (e) =>{
+    const innerColor = bgColorInput.value;
+    document.body.style.backgroundColor = innerColor;
+});
+
+color.addEventListener('click', (e) =>{
+    const color = fontColorInput.value;
+    document.body.style.color = color;
+});
+
+resetButton.addEventListener('click', (e) =>{
+    document.body.style.backgroundColor = '#ffffff';
+    document.body.style.color = '#000000';
+    bgColorInput.value = '#ffffff';
+    fontColorInput.value = '#000000';
 });
